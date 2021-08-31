@@ -63,7 +63,7 @@ function copyTextToClipboard(text) {
   });
 }
 
-var copyPassword = document.querySelector('.passhash');
+var copyPassword = document.querySelector('.js-copy-password-btn');
   
 
 copyPassword.addEventListener('click', function(event) {
@@ -121,7 +121,7 @@ function Afunctionthatdosomething(nu,isSym,isNumber,isMajes){
 	  breaker++;
       break;
     }
-	if(breaker==200){
+	if(breaker==130){
 		str = str.substring(0, str.length - 1);
 		str = str + '\n';
 		breaker = 0;
