@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Password Genrator</h2>
+<p>Password generator</p>
+
+<p id="demo"></p>
+
+<script>
+function Afunctionthatdosomething(){
+  var nu = Number(window.prompt("Enter length password: "));
+  var isSym = confirm("Do you want Symbol");
+  var isNumber = confirm("Do you want Numbers");
+  var isMajes = confirm("Do you want Majscule letters");
+  let str = "";
+  const alpha = Array.from(Array(26)).map((e, i) => i + 65);
+  const alphabet = alpha.map((x) => String.fromCharCode(x));
+  const minialphabet = alpha.map((x) => String.fromCharCode(x).toLowerCase());
+  const numberarr = Array.from(Array(30).keys());
+  const symbol = ["<",">","^","$","*","'","&","!","-",'"',"+","/","|","@","'\'",'#'];
+  
+  for(let i = 0 ; i < nu ; i++) {
+    const choose = getRandomInt(0,4);
+    switch (choose) {
+      
+    case 0:
+      str = str + minialphabet[getRandomInt(0,minialphabet.length)];
+      break;
+    case 1 : 
+      if(isSym){
+      str = str + symbol[getRandomInt(0,symbol.length)];
+      }
+      else{
+      str = str + minialphabet[getRandomInt(0,minialphabet.length)];
+      }
+      break;
+    case 2 :
+      if(isNumber){
+      str = str + numberarr[getRandomInt(0,numberarr.length)];
+      }
+      else{
+        str = str + minialphabet[getRandomInt(0,minialphabet.length)];
+      }
+      break;
+    case 3 :
+      if(isMajes){
+      str   = str + alphabet[getRandomInt(0,alphabet.length)];
+      }
+      else{
+      str = str + minialphabet[getRandomInt(0,minialphabet.length)];
+      }
+      break;
+    }
+  }
+   /** if(i%2==0){
+    str = str + minialphabet[getRandomInt(0,minialphabet.length)];
+    }
+    else{
+    if(isSym){
+      str = str + symbol[getRandomInt(0,symbol.length)];
+    }
+    else if(isNumber){
+      str = str + numberarr[getRandomInt(0,numberarr.length)];
+    }
+    }
+  }*/
+  return str;
+  
+}
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+document.getElementById("demo").innerHTML = Afunctionthatdosomething();;
+</script> 
+
+</body>
+</html>
