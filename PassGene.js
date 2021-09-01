@@ -67,7 +67,8 @@ var copyPassword = document.querySelector('.js-copy-password-btn');
   
 
 copyPassword.addEventListener('click', function(event) {
-  copyTextToClipboard(document.getElementById("passhash").innerHTML);
+	console.log(document.getElementById("passhash").textContent.length);
+	copyTextToClipboard(document.getElementById("passhash").textContent);
 });
 
 
@@ -121,7 +122,7 @@ function Afunctionthatdosomething(nu,isSym,isNumber,isMajes){
 	  breaker++;
       break;
     }
-	if(breaker==130){
+	if(breaker==200){
 		str = str.substring(0, str.length - 1);
 		str = str + '\n';
 		breaker = 0;
