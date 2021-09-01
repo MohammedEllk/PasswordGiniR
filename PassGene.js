@@ -100,11 +100,11 @@ function StopSucc(func) {
 }
 
 var copyPassword = document.querySelector('.js-copy-password-btn');
-copyPassword.addEventListener('click', function(event) {
-console.log(document.getElementById("passhash").textContent.length);
-copyTextToClipboard(document.getElementById("passhash").textContent);
-});
-
+	copyPassword.addEventListener('click', function(event) {
+	console.log(document.getElementById("passhash").textContent.length);
+	copyTextToClipboard(document.getElementById("passhash").textContent);
+})
+	
 function showsuccess(){
 	document.getElementById("success").style.visibility = "visible";
 	document.getElementById("success").style.width =  "400px";
@@ -124,6 +124,12 @@ $('#passhash').on('input', function (evt) {
 	console.log(document.getElementById("passhash").innerHTML);
 	$('#passhash').val(value);
 	document.getElementById("lengtext").innerHTML = value.length;
+	var copyPassword = document.querySelector('.js-copy-password-btn');
+	copyPassword.addEventListener('click', function(event) {
+	console.log(document.getElementById("passhash").textContent.length);
+	copyTextToClipboard(evt.target.value);
+});
+
 })
 $('#passhash').on('change', function (evt) {
 	evt.preventDefault();
