@@ -1,4 +1,4 @@
-
+var longeur ;
 function generate(e){
 e.preventDefault();
 document.getElementById("passhash").innerHTML = "";
@@ -23,7 +23,7 @@ var isNumb = false;
   }
   document.getElementById("passhash").innerHTML = htmlEncode(Afunctionthatdosomething(lengthPass,isSymb,isNumb,isMajes));
   var textpass = document.getElementById("passhash").innerHTML;
-  document.getElementById("lengtext").innerHTML = Afunctionthatdosomething(lengthPass,isSymb,isNumb,isMajes).length;
+  longeur = Afunctionthatdosomething(lengthPass,isSymb,isNumb,isMajes).length;
   ChangeTexte(textpass);
 
 console.log(isMajes);
@@ -110,8 +110,11 @@ function showsuccess(){
 	document.getElementById("success").style.width =  "400px";
 	document.getElementById("success").style.height =  "30px";
 	document.getElementById("success").style.backgroundColor = "green";
-	document.getElementById("success").innerHTML = "Password copied successfully!! sa longeur est "+document.getElementById("passhash").textContent.length; 
+	document.getElementById("success").innerHTML = "Password copied successfully!! sa longeur est "+longeur; 
+	
+	
 }
+
 function hidesuccess(){
 	document.getElementById("success").style.visibility = "hidden";
 	document.getElementById("success").style.width =  "0px";
@@ -123,6 +126,7 @@ $('#passhash').on('input', function (evt) {
 	var value = evt.target.value;
 	console.log(document.getElementById("passhash").innerHTML);
 	$('#passhash').val(value);
+	longeur = value.length;
 	document.getElementById("lengtext").innerHTML = value.length;
 	var copyPassword = document.querySelector('.js-copy-password-btn');
 	copyPassword.addEventListener('click', function(event) {
