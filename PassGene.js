@@ -22,8 +22,9 @@ var isNumb = false;
     isNumb= true;
   }
   document.getElementById("passhash").innerHTML = htmlEncode(Afunctionthatdosomething(lengthPass,isSymb,isNumb,isMajes));
-  var textpass = document.getElementById("passhash").innerHTML;
+  var textpass = document.getElementById("passhash").textContent;
   longeur = Afunctionthatdosomething(lengthPass,isSymb,isNumb,isMajes).length;
+  document.getElementById("lengtext").innerHTML = longeur;
   ChangeTexte(textpass);
 
 console.log(isMajes);
